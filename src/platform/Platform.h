@@ -19,8 +19,11 @@
 
 #endif
 
-#include "../base/Allocator.h"
-#include "../base/DyLib.h"
+#include "base/Allocator.h"
+#include "base/DyLib.h"
+#include "base/Thread.h"
+#include "../../src/ui/base/Window_Base.h"
+#include "../../src/render/GUI_Render.h"
 
 #define ALIGN( alignment )              __declspec( align(alignment) )
 #define ALIGN_SIZE(Size, AlSize)        ((Size + (AlSize-1)) & (~(AlSize-1)))

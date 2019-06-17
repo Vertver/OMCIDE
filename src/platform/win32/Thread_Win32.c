@@ -1,3 +1,10 @@
+/*********************************************************
+* Copyright (C) VERTVER, 2019. All rights reserved.
+* OMCIDE - Open Micro-controller IDE
+* License: GPLv3
+**********************************************************
+* Module Name: Thread System
+*********************************************************/
 #include "Thread.h"
 
 u32 ThreadId = 0;

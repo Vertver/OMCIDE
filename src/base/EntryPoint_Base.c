@@ -13,5 +13,10 @@ OMCMain(
 	int argc
 )
 {
+	OMCRenderInit(0);
 
+	while (true)
+	{
+		Sleep(1);
+	}
 }

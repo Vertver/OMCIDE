@@ -5,9 +5,7 @@
 **********************************************************
 * Module Name: Window system
 *********************************************************/
-#include "Window.h"
-#include "GUI_Render.h"
-#include "Thread.h"
+#include "../Platform.h"
 
 #define MAX_VERTEX_BUFFER 512 * 1024
 #define MAX_INDEX_BUFFER 128 * 1024

@@ -3,7 +3,7 @@
 * OMCIDE - Open Micro-controller IDE
 * License: GPLv3
 **********************************************************
-* Module Name: Thread system
+* Module Name: Thread System
 *********************************************************/
 #pragma once
 #include "../Platform.h"

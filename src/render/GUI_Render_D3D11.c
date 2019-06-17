@@ -5,8 +5,7 @@
 **********************************************************
 * Module Name: GUI Render
 *********************************************************/
-#include "GUI_Render.h"
-#include "base/Window.h"
+#include "../Platform.h"
 #include <d3d11.h>
 
 #include "../demo/style.c"
@@ -36,9 +35,11 @@ OMCRenderInitD3D11()
 		pD3D11CreateDevice = OMCGetProc(hLib, "D3D11CreateDeviceAndSwapChain");
 	}
 
-	void* hWnd = OMCWindowCreate();
+	void* hWnd = OMCMainWindowCreate();
 
-	/* D3D11 setup */
+	/*
+		Init D3D11 device
+	*/
 	memset(&swap_chain_desc, 0, sizeof(swap_chain_desc));
 	swap_chain_desc.BufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
 	swap_chain_desc.BufferDesc.RefreshRate.Numerator = 60;
@@ -54,8 +55,10 @@ OMCRenderInitD3D11()
 
 	if (FAILED(pD3D11CreateDevice(NULL, D3D_DRIVER_TYPE_HARDWARE, NULL, 0, NULL, 0, D3D11_SDK_VERSION, &swap_chain_desc, &pSwapChain, &pDevice, &feature_level, &pContext)))
 	{
-		/* if hardware device fails, then try WARP high-performance
-		   software rasterizer, this is useful for RDP sessions */
+		/* 
+			If hardware device fails, then try WARP high-performance
+			software rasterizer, this is useful for RDP sessions 
+		*/
 		hr = pD3D11CreateDevice(NULL, D3D_DRIVER_TYPE_WARP, NULL, 0, NULL, 0, D3D11_SDK_VERSION, &swap_chain_desc, &pSwapChain, &pDevice, &feature_level, &pContext);
 	}
 
@@ -74,13 +77,19 @@ OMCRenderDrawD3D11()
 	/* Draw */
 	ID3D11DeviceContext_ClearRenderTargetView(pContext, pRTView, &bg.r);
 	ID3D11DeviceContext_OMSetRenderTargets(pContext, 1, &pRTView, NULL);
+
 	nk_d3d11_render(pContext, NK_ANTI_ALIASING_ON);
+
 	HRESULT hr = IDXGISwapChain_Present(pSwapChain, 1, 0);
-	if (hr == DXGI_ERROR_DEVICE_RESET || hr == DXGI_ERROR_DEVICE_REMOVED) {
+	if (hr == DXGI_ERROR_DEVICE_RESET || hr == DXGI_ERROR_DEVICE_REMOVED)
+	{
 		return;
 	}
-	else if (hr == DXGI_STATUS_OCCLUDED) {
-		/* window is not visible, so vsync won't work. Let's sleep a bit to reduce CPU usage */
+	else if (hr == DXGI_STATUS_OCCLUDED) 
+	{
+		/* 
+			Window is not visible, so VSync won't work. Let's sleep a bit to reduce CPU usage
+		*/
 		Sleep(10);
 	}
 
@@ -93,7 +102,6 @@ OMCRenderResizeD3D11(
 	int Height
 )
 {
-
 	ID3D11Texture2D* back_buffer = NULL;
 	D3D11_RENDER_TARGET_VIEW_DESC desc;
 	HRESULT hr = 0;
