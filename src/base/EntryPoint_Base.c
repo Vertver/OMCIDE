@@ -14,9 +14,19 @@ OMCMain(
 )
 {
 	OMCRenderInit(0);
+	OMCSetInited();
 
 	while (true)
 	{
 		Sleep(1);
+
+		if (!OMCIsEnabled())
+		{
+			break;
+		}
 	}
+
+	OMCRenderDestroy();
+
+	return 0;
 }

@@ -22,6 +22,8 @@ wWinMain(
 	int iCount = 0;
 	int iRet = 0;
 
+	OMCInitAllocator();
+
 	/*
 		Get 'argv' and 'argc' in widechar to convert
 		this string to UTF-8
@@ -76,6 +78,8 @@ wWinMain(
 		if (lpOutArgList[i]) OMCMemFree(lpOutArgList[i]);
 	}
 	OMCMemFree(lpOutArgList);
+
+	OMCDestroyAllocator();
 
 	/*
 		Free COM and OLE

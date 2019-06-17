@@ -29,10 +29,17 @@ typedef char                utf8;
 typedef utf8*               PStr;
 typedef utf8 const*         PConstStr;
 
-typedef i8					boolean;
+#ifndef PLATFORM_WINDOWS
+typedef u8					boolean;
+#endif
 
+#ifndef true
 #define true 1
+#endif
+
+#ifndef false
 #define false 0
+#endif
 
 #ifdef PLATFORM_WINDOWS
 #define MAX_PATH        260

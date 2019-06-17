@@ -144,9 +144,6 @@
     <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_progress.c">
       <Filter>src\nuklear</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\render\GUI_Render_D3D11.c">
-      <Filter>src\Render\D3D11</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\render\GUI_Render.c">
       <Filter>src\Render</Filter>
     </ClCompile>

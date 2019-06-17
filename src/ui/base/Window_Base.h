@@ -26,3 +26,6 @@ OMCMainWindowSetName(
 
 void
 OMCSetInited();
+
+int
+OMCIsEnabled();

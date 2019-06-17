@@ -17,9 +17,6 @@
 #define NK_INCLUDE_DEFAULT_FONT
 #define NK_IMPLEMENTATION
 
-#include "nuklear.h"
-#include "demo/d3d11/nuklear_d3d11.h"
-
 boolean
 OMCRenderInit(
 	int RenderType
@@ -94,3 +91,12 @@ OMCRenderResizeGDI(
 
 void
 OMCRenderNuklear();
+
+int
+NuklearHandleEvent(HWND wnd, UINT msg, WPARAM wparam, LPARAM lparam);
+
+int
+NuklearInputBegin();
+
+int
+NuklearInputEnd();

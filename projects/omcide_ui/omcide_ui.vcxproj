@@ -77,8 +77,12 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)inc\;$(SolutionDir)src\;$(SolutionDir)src\base;$(SolutionDir)src\cpu;$(SolutionDir)src\dbg;$(SolutionDir)src\platform\win32;$(SolutionDir)src\render;$(SolutionDir)src\ui;$(SolutionDir)3rd-party\;$(SolutionDir)3rd-party\nuklear;$(SolutionDir)3rd-party\nuklear\src;$(SolutionDir)3rd-party\nuklear\src\demo\d3d11;$(SolutionDir)3rd-party\zlib;$(SolutionDir)3rd-party\glfw;$(SolutionDir)3rd-party\cJSON</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>NK_D3D11_IMPLEMENTATION;WINDOWS_PLATFORM;WINX64;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;UI_PART;_COBJMACROS;NK_D3D11_IMPLEMENTATION;WINDOWS_PLATFORM;WINX64;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <Lib>
+      <AdditionalDependencies>omcide_kernel.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -87,8 +91,12 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)inc\;$(SolutionDir)src\;$(SolutionDir)src\base;$(SolutionDir)src\cpu;$(SolutionDir)src\dbg;$(SolutionDir)src\platform\win32;$(SolutionDir)src\render;$(SolutionDir)src\ui;$(SolutionDir)3rd-party\;$(SolutionDir)3rd-party\nuklear;$(SolutionDir)3rd-party\nuklear\src;$(SolutionDir)3rd-party\nuklear\src\demo\d3d11;$(SolutionDir)3rd-party\zlib;$(SolutionDir)3rd-party\glfw;$(SolutionDir)3rd-party\cJSON</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>NK_D3D11_IMPLEMENTATION;WINDOWS_PLATFORM;WINX86;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;UI_PART;_COBJMACROS;NK_D3D11_IMPLEMENTATION;WINDOWS_PLATFORM;WINX86;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <Lib>
+      <AdditionalDependencies>omcide_kernel.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -99,12 +107,16 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)inc\;$(SolutionDir)src\;$(SolutionDir)src\base;$(SolutionDir)src\cpu;$(SolutionDir)src\dbg;$(SolutionDir)src\platform\win32;$(SolutionDir)src\render;$(SolutionDir)src\ui;$(SolutionDir)3rd-party\;$(SolutionDir)3rd-party\nuklear;$(SolutionDir)3rd-party\nuklear\src;$(SolutionDir)3rd-party\nuklear\src\demo\d3d11;$(SolutionDir)3rd-party\zlib;$(SolutionDir)3rd-party\glfw;$(SolutionDir)3rd-party\cJSON</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>NK_D3D11_IMPLEMENTATION;WINDOWS_PLATFORM;WINX86;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;UI_PART;_COBJMACROS;NK_D3D11_IMPLEMENTATION;WINDOWS_PLATFORM;WINX86;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <Lib>
+      <AdditionalDependencies>omcide_kernel.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -115,12 +127,16 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)inc\;$(SolutionDir)src\;$(SolutionDir)src\base;$(SolutionDir)src\cpu;$(SolutionDir)src\dbg;$(SolutionDir)src\platform\win32;$(SolutionDir)src\render;$(SolutionDir)src\ui;$(SolutionDir)3rd-party\;$(SolutionDir)3rd-party\nuklear;$(SolutionDir)3rd-party\nuklear\src;$(SolutionDir)3rd-party\nuklear\src\demo\d3d11;$(SolutionDir)3rd-party\zlib;$(SolutionDir)3rd-party\glfw;$(SolutionDir)3rd-party\cJSON</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>NK_D3D11_IMPLEMENTATION;WINDOWS_PLATFORM;WINX64;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;UI_PART;_COBJMACROS;NK_D3D11_IMPLEMENTATION;WINDOWS_PLATFORM;WINX64;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <Lib>
+      <AdditionalDependencies>omcide_kernel.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_buffer.c" />
@@ -164,7 +180,6 @@
     <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_widget.c" />
     <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_window.c" />
     <ClCompile Include="..\..\src\render\GUI_Render.c" />
-    <ClCompile Include="..\..\src\render\GUI_Render_D3D11.c" />
     <ClCompile Include="..\..\src\ui\base\Window_Win32.c" />
   </ItemGroup>
   <ItemGroup>

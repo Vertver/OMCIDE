@@ -10,6 +10,9 @@
 void
 OMCInitAllocator();
 
+void
+OMCDestroyAllocator();
+
 void*
 OMCMemAlloc(
 	u64 SizeOfAllocating

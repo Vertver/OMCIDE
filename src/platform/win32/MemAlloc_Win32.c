@@ -16,6 +16,15 @@ OMCInitAllocator()
 	hHeap = HeapCreate(0, 0x010000, 0);
 }
 
+void
+OMCDestroyAllocator()
+{
+	if (hHeap != NULL && hHeap != INVALID_HANDLE_VALUE)
+	{
+		HeapDestroy(hHeap);
+	}
+}
+
 void*
 OMCMemAlloc(
 	u64 SizeOfAllocating
