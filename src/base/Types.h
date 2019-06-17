@@ -29,6 +29,11 @@ typedef char                utf8;
 typedef utf8*               PStr;
 typedef utf8 const*         PConstStr;
 
+typedef i8					boolean;
+
+#define true 1
+#define false 0
+
 #ifdef PLATFORM_WINDOWS
 #define MAX_PATH        260
 typedef wchar_t         utf16;

@@ -6,11 +6,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\platform\win32\Platform_Win32.h">
-      <Filter>src</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="..\..\src\platform\win32\EntryPoint_Win32.c">
       <Filter>src</Filter>
     </ClCompile>

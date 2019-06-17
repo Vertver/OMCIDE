@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{326061B2-83A9-4DBE-86FC-E05CD317F712}</ProjectGuid>
-    <RootNamespace>omcidekernel</RootNamespace>
+    <ProjectGuid>{25B60192-F54A-456E-8D1F-588CF0CE3EA1}</ProjectGuid>
+    <RootNamespace>omcideui</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -69,36 +69,25 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <TargetExt>.lib</TargetExt>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <TargetExt>.lib</TargetExt>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <TargetExt>.lib</TargetExt>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <TargetExt>.lib</TargetExt>
-  </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
-      <ConformanceMode>true</ConformanceMode>
-      <PreprocessorDefinitions>WINX86;WINDOWS_PLATFORM;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)inc\;$(SolutionDir)src\;$(SolutionDir)src\base;$(SolutionDir)src\cpu;$(SolutionDir)src\dbg;$(SolutionDir)src\platform\win32;$(SolutionDir)src\render;$(SolutionDir)src\ui;$(SolutionDir)3rd-party\;$(SolutionDir)3rd-party\nuklear;$(SolutionDir)3rd-party\nuklear\src;$(SolutionDir)3rd-party\nuklear\src\demo\d3d11;$(SolutionDir)3rd-party\zlib;$(SolutionDir)3rd-party\glfw;$(SolutionDir)3rd-party\cJSON</AdditionalIncludeDirectories>
-    </ClCompile>
-  </ItemDefinitionGroup>
+  <PropertyGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <PreprocessorDefinitions>WINX64;WINDOWS_PLATFORM;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)inc\;$(SolutionDir)src\;$(SolutionDir)src\base;$(SolutionDir)src\cpu;$(SolutionDir)src\dbg;$(SolutionDir)src\platform\win32;$(SolutionDir)src\render;$(SolutionDir)src\ui;$(SolutionDir)3rd-party\;$(SolutionDir)3rd-party\nuklear;$(SolutionDir)3rd-party\nuklear\src;$(SolutionDir)3rd-party\nuklear\src\demo\d3d11;$(SolutionDir)3rd-party\zlib;$(SolutionDir)3rd-party\glfw;$(SolutionDir)3rd-party\cJSON</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NK_D3D11_IMPLEMENTATION;WINDOWS_PLATFORM;WINX64;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)inc\;$(SolutionDir)src\;$(SolutionDir)src\base;$(SolutionDir)src\cpu;$(SolutionDir)src\dbg;$(SolutionDir)src\platform\win32;$(SolutionDir)src\render;$(SolutionDir)src\ui;$(SolutionDir)3rd-party\;$(SolutionDir)3rd-party\nuklear;$(SolutionDir)3rd-party\nuklear\src;$(SolutionDir)3rd-party\nuklear\src\demo\d3d11;$(SolutionDir)3rd-party\zlib;$(SolutionDir)3rd-party\glfw;$(SolutionDir)3rd-party\cJSON</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NK_D3D11_IMPLEMENTATION;WINDOWS_PLATFORM;WINX86;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -109,8 +98,8 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <PreprocessorDefinitions>WINX86;WINDOWS_PLATFORM;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)inc\;$(SolutionDir)src\;$(SolutionDir)src\base;$(SolutionDir)src\cpu;$(SolutionDir)src\dbg;$(SolutionDir)src\platform\win32;$(SolutionDir)src\render;$(SolutionDir)src\ui;$(SolutionDir)3rd-party\;$(SolutionDir)3rd-party\nuklear;$(SolutionDir)3rd-party\nuklear\src;$(SolutionDir)3rd-party\nuklear\src\demo\d3d11;$(SolutionDir)3rd-party\zlib;$(SolutionDir)3rd-party\glfw;$(SolutionDir)3rd-party\cJSON</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NK_D3D11_IMPLEMENTATION;WINDOWS_PLATFORM;WINX86;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -125,8 +114,8 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <PreprocessorDefinitions>WINX64;WINDOWS_PLATFORM;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)inc\;$(SolutionDir)src\;$(SolutionDir)src\base;$(SolutionDir)src\cpu;$(SolutionDir)src\dbg;$(SolutionDir)src\platform\win32;$(SolutionDir)src\render;$(SolutionDir)src\ui;$(SolutionDir)3rd-party\;$(SolutionDir)3rd-party\nuklear;$(SolutionDir)3rd-party\nuklear\src;$(SolutionDir)3rd-party\nuklear\src\demo\d3d11;$(SolutionDir)3rd-party\zlib;$(SolutionDir)3rd-party\glfw;$(SolutionDir)3rd-party\cJSON</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NK_D3D11_IMPLEMENTATION;WINDOWS_PLATFORM;WINX64;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -134,14 +123,55 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\base\EntryPoint_Base.c" />
-    <ClCompile Include="..\..\src\platform\win32\DyLib_Win32.c" />
-    <ClCompile Include="..\..\src\platform\win32\MemAlloc_Win32.c" />
-    <ClCompile Include="..\..\src\platform\win32\Thread_Win32.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_buffer.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_button.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_chart.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_color.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_color_picker.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_combo.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_context.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_contextual.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_draw.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_edit.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_font.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_group.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_image.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_input.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_layout.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_list_view.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_math.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_menu.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_page_element.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_panel.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_pool.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_popup.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_progress.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_property.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_scrollbar.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_selectable.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_slider.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_string.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_style.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_table.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_text.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_text_editor.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_toggle.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_tooltip.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_tree.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_utf8.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_util.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_vertex.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_widget.c" />
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_window.c" />
+    <ClCompile Include="..\..\src\render\GUI_Render.c" />
+    <ClCompile Include="..\..\src\render\GUI_Render_D3D11.c" />
+    <ClCompile Include="..\..\src\ui\base\Window_Win32.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\base\DyLib.h" />
-    <ClInclude Include="..\..\src\base\Thread.h" />
+    <ClInclude Include="..\..\3rd-party\nuklear\src\nuklear.h" />
+    <ClInclude Include="..\..\3rd-party\nuklear\src\nuklear_internal.h" />
+    <ClInclude Include="..\..\src\render\GUI_Render.h" />
+    <ClInclude Include="..\..\src\ui\base\Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

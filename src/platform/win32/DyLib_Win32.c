@@ -7,6 +7,7 @@
 *********************************************************/
 #include "../Platform.h"
 
+#ifdef WINDOWS_PLATFORM
 void*
 OMCGetProc(
 	void* LibHandle,
@@ -54,3 +55,4 @@ OMCFreeLibrary(
 		FreeLibrary((HMODULE)LibraryHandle);
 	}
 }
+#endif

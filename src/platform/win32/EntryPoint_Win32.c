@@ -44,7 +44,7 @@ wWinMain(
 			if (StringSize)
 			{
 				// allocate string
-				lpOutArgList[i] = OMCMemAlloc(StringSize);
+				lpOutArgList[i] = OMCMemAlloc(++StringSize);
 
 				// convert to UTF-8
 				if (!WideCharToMultiByte(CP_UTF8, 0, lpArgList[i], -1, lpOutArgList[i], StringSize, NULL, NULL))

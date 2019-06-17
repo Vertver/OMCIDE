@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{a7741a13-0695-4ca4-846a-eb61897300ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Base">
+      <UniqueIdentifier>{72276067-b969-4e98-92a0-65e5b201d2b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\nuklear">
+      <UniqueIdentifier>{42cf171f-5f2e-405e-a8b4-b7ef7c0480bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Render">
+      <UniqueIdentifier>{f86cf2e8-83ad-46c6-a106-cae57c58fd0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Render\GDI">
+      <UniqueIdentifier>{ccc8b904-ee6a-4c69-b832-53ed47f9998c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Render\GLFW">
+      <UniqueIdentifier>{5e5516c4-5fd6-40d5-940e-69c5aaa859a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Render\D3D11">
+      <UniqueIdentifier>{fc025a4d-cdfa-4c60-aa05-e39c5bce8b44}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_property.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_scrollbar.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_selectable.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_slider.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_string.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_style.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_table.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_text.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_text_editor.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_toggle.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_tooltip.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_tree.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_utf8.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_util.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_vertex.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_widget.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_window.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_buffer.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_button.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_chart.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_color.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_color_picker.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_combo.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_context.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_contextual.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_draw.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_edit.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_font.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_group.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_image.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_input.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_layout.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_list_view.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_math.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_menu.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_page_element.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_panel.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_pool.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_popup.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_progress.c">
+      <Filter>src\nuklear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\render\GUI_Render_D3D11.c">
+      <Filter>src\Render\D3D11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\render\GUI_Render.c">
+      <Filter>src\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\ui\base\Window_Win32.c">
+      <Filter>src\Base</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\3rd-party\nuklear\src\nuklear.h">
+      <Filter>src\nuklear</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd-party\nuklear\src\nuklear_internal.h">
+      <Filter>src\nuklear</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\render\GUI_Render.h">
+      <Filter>src\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\ui\base\Window.h">
+      <Filter>src\Base</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

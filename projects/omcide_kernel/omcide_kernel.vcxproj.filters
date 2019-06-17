@@ -6,16 +6,25 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\base\Allocator.h">
-      <Filter>src</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="..\..\src\base\EntryPoint_Base.c">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\platform\win32\MemAlloc_Win32.c">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\platform\win32\DyLib_Win32.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\platform\win32\Thread_Win32.c">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\base\DyLib.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\base\Thread.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

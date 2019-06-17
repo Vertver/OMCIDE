@@ -22,34 +22,34 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{61D960B7-6901-42BC-BFEE-9BF1ED435664}</ProjectGuid>
     <RootNamespace>omcide</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -77,7 +77,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <PreprocessorDefinitions>WINX86;WINDOWS_PLATFORM;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)inc\;$(SolutionDir)src\;$(SolutionDir)src\base;$(SolutionDir)src\cpu;$(SolutionDir)src\dbg;$(SolutionDir)src\platform\win32;$(SolutionDir)src\render;$(SolutionDir)src\ui;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)inc\;$(SolutionDir)src\;$(SolutionDir)src\base;$(SolutionDir)src\cpu;$(SolutionDir)src\dbg;$(SolutionDir)src\platform\win32;$(SolutionDir)src\render;$(SolutionDir)src\ui;$(SolutionDir)3rd-party\;$(SolutionDir)3rd-party\nuklear;$(SolutionDir)3rd-party\nuklear\src;$(SolutionDir)3rd-party\nuklear\src\demo\d3d11;$(SolutionDir)3rd-party\zlib;$(SolutionDir)3rd-party\glfw;$(SolutionDir)3rd-party\cJSON</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -87,7 +87,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <PreprocessorDefinitions>WINX64;WINDOWS_PLATFORM;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)inc\;$(SolutionDir)src\;$(SolutionDir)src\base;$(SolutionDir)src\cpu;$(SolutionDir)src\dbg;$(SolutionDir)src\platform\win32;$(SolutionDir)src\render;$(SolutionDir)src\ui;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)inc\;$(SolutionDir)src\;$(SolutionDir)src\base;$(SolutionDir)src\cpu;$(SolutionDir)src\dbg;$(SolutionDir)src\platform\win32;$(SolutionDir)src\render;$(SolutionDir)src\ui;$(SolutionDir)3rd-party\;$(SolutionDir)3rd-party\nuklear;$(SolutionDir)3rd-party\nuklear\src;$(SolutionDir)3rd-party\nuklear\src\demo\d3d11;$(SolutionDir)3rd-party\zlib;$(SolutionDir)3rd-party\glfw;$(SolutionDir)3rd-party\cJSON</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -99,7 +99,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <PreprocessorDefinitions>WINX86;WINDOWS_PLATFORM;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)inc\;$(SolutionDir)src\;$(SolutionDir)src\base;$(SolutionDir)src\cpu;$(SolutionDir)src\dbg;$(SolutionDir)src\platform\win32;$(SolutionDir)src\render;$(SolutionDir)src\ui;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)inc\;$(SolutionDir)src\;$(SolutionDir)src\base;$(SolutionDir)src\cpu;$(SolutionDir)src\dbg;$(SolutionDir)src\platform\win32;$(SolutionDir)src\render;$(SolutionDir)src\ui;$(SolutionDir)3rd-party\;$(SolutionDir)3rd-party\nuklear;$(SolutionDir)3rd-party\nuklear\src;$(SolutionDir)3rd-party\nuklear\src\demo\d3d11;$(SolutionDir)3rd-party\zlib;$(SolutionDir)3rd-party\glfw;$(SolutionDir)3rd-party\cJSON</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -115,7 +115,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <PreprocessorDefinitions>WINX64;WINDOWS_PLATFORM;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)inc\;$(SolutionDir)src\;$(SolutionDir)src\base;$(SolutionDir)src\cpu;$(SolutionDir)src\dbg;$(SolutionDir)src\platform\win32;$(SolutionDir)src\render;$(SolutionDir)src\ui;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)inc\;$(SolutionDir)src\;$(SolutionDir)src\base;$(SolutionDir)src\cpu;$(SolutionDir)src\dbg;$(SolutionDir)src\platform\win32;$(SolutionDir)src\render;$(SolutionDir)src\ui;$(SolutionDir)3rd-party\;$(SolutionDir)3rd-party\nuklear;$(SolutionDir)3rd-party\nuklear\src;$(SolutionDir)3rd-party\nuklear\src\demo\d3d11;$(SolutionDir)3rd-party\zlib;$(SolutionDir)3rd-party\glfw;$(SolutionDir)3rd-party\cJSON</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -124,9 +124,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\platform\win32\EntryPoint_Win32.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\src\platform\win32\Platform_Win32.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -3,22 +3,26 @@
 * OMCIDE - Open Micro-controller IDE
 * License: GPLv3
 **********************************************************
-* Module Name: Dynamic symbol libraries
+* Module Name: Window system
 *********************************************************/
 #pragma once
+#include "../Platform.h"
 
 void*
-OMCGetProc(
-	void* LibHandle, 
-	const char* ProcName
-);
+OMCMainWindowCreate();
 
-void*
-OMCLoadLibrary(
-	const char* LibraryName
+void
+OMCWindowDestroy(
+	void* WindowHandle
 );
 
 void
-OMCFreeLibrary(
-	void* LibraryHandle
+OMCMainWindowDestroy();
+
+void
+OMCMainWindowSetName(
+	const char* NameUTF8
 );
+
+void
+OMCSetInited();
