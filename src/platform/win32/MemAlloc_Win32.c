@@ -7,6 +7,7 @@
 *********************************************************/
 #include "../Platform.h"
 
+#ifdef WINDOWS_PLATFORM
 HANDLE hHeap;
 
 void
@@ -62,3 +63,4 @@ OMCMemFree(
 		HeapFree(hHeap, 0, PtrToFree);
 	}
 }
+#endif

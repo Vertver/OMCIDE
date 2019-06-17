@@ -1,3 +1,10 @@
+/*********************************************************
+* Copyright (C) VERTVER, 2019. All rights reserved.
+* OMCIDE - Open Micro-controller IDE
+* License: GPLv3
+**********************************************************
+* Module Name: Platform header
+*********************************************************/
 #pragma once
 
 #include "Types.h"
@@ -13,6 +20,7 @@
 #endif
 
 #include "../base/Allocator.h"
+#include "../base/DyLib.h"
 
 #define ALIGN( alignment )              __declspec( align(alignment) )
 #define ALIGN_SIZE(Size, AlSize)        ((Size + (AlSize-1)) & (~(AlSize-1)))

@@ -1,0 +1,12 @@
+[submodule "3rd-party/nuklear/"]
+	path = 3rd-party/nuklear/
+	url = https://github.com/vurtun/nuklear
+[submodule "3rd-party/nuklear"]
+	path = 3rd-party/nuklear
+	url = https://github.com/vurtun/nuklear
+[submodule "3rd-party/cJSON"]
+	path = 3rd-party/cJSON
+	url = https://github.com/DaveGamble/cJSON
+[submodule "3rd-party/zlib"]
+	path = 3rd-party/zlib
+	url = https://github.com/madler/zlib

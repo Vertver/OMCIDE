@@ -7,6 +7,7 @@
 *********************************************************/
 #include "../Platform.h"
 
+#ifdef WINDOWS_PLATFORM
 BOOL
 WINAPI 
 wWinMain(
@@ -84,3 +85,4 @@ wWinMain(
 
 	return iRet;
 }
+#endif
