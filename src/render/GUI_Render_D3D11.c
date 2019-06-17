@@ -82,6 +82,7 @@ OMCRenderDrawD3D11()
 	else if (hr == DXGI_STATUS_OCCLUDED) {
 		/* window is not visible, so vsync won't work. Let's sleep a bit to reduce CPU usage */
 		Sleep(10);
+	}
 
 	OMCRenderNuklear();
 }
