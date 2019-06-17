@@ -171,7 +171,7 @@
     <ClInclude Include="..\..\3rd-party\nuklear\src\nuklear.h" />
     <ClInclude Include="..\..\3rd-party\nuklear\src\nuklear_internal.h" />
     <ClInclude Include="..\..\src\render\GUI_Render.h" />
-    <ClInclude Include="..\..\src\ui\base\Window.h" />
+    <ClInclude Include="..\..\src\ui\base\Window_Base.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -164,7 +164,7 @@
     <ClInclude Include="..\..\src\render\GUI_Render.h">
       <Filter>src\Render</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\ui\base\Window.h">
+    <ClInclude Include="..\..\src\ui\base\Window_Base.h">
       <Filter>src\Base</Filter>
     </ClInclude>
   </ItemGroup>
