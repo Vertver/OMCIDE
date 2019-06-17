@@ -30,6 +30,8 @@ CustomWindowProc(
 {
 	switch (uMsg)
 	{
+	case WM_CLOSE:
+		OMCMainWindowDestroy();
 	case WM_COPY:
 		break;
 	case WM_ENTERSIZEMOVE:
@@ -161,7 +163,6 @@ WindowCreateFunc(
 		Sleep(4);
 	}
 
-	OMCRenderDestroy();
 	OMCWindowDestroy(MainHWND);
 	MainHWND = NULL;
 }

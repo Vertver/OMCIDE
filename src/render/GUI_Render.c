@@ -187,6 +187,8 @@ OMCRenderInitD3D11()
 {
 	D3D_FEATURE_LEVEL feature_level;
 	DXGI_SWAP_CHAIN_DESC swap_chain_desc;
+	ID3D11Texture2D* back_buffer = NULL;
+	D3D11_RENDER_TARGET_VIEW_DESC desc;
 	HRESULT hr = 0;
 
 	if (!pD3D11CreateDevice)
@@ -221,6 +223,25 @@ OMCRenderInitD3D11()
 		*/
 		hr = pD3D11CreateDevice(NULL, D3D_DRIVER_TYPE_WARP, NULL, 0, NULL, 0, D3D11_SDK_VERSION, &swap_chain_desc, &pSwapChain, &pDevice, &feature_level, &pContext);
 	}
+
+	if (pRTView) ID3D11RenderTargetView_Release(pRTView);
+
+	ID3D11DeviceContext_OMSetRenderTargets(pContext, 0, NULL, NULL);
+
+	hr = IDXGISwapChain_ResizeBuffers(pSwapChain, 0, 640, 480, DXGI_FORMAT_UNKNOWN, 0);
+	if (hr == DXGI_ERROR_DEVICE_REMOVED || hr == DXGI_ERROR_DEVICE_RESET || hr == DXGI_ERROR_DRIVER_INTERNAL_ERROR)
+	{
+		return;
+	}
+
+	memset(&desc, 0, sizeof(desc));
+	desc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
+	desc.ViewDimension = D3D11_RTV_DIMENSION_TEXTURE2D;
+
+	hr = IDXGISwapChain_GetBuffer(pSwapChain, 0, &IID_ID3D11Texture2D, (void **)&back_buffer);
+	hr = ID3D11Device_CreateRenderTargetView(pDevice, (ID3D11Resource *)back_buffer, &desc, &pRTView);
+
+	ID3D11Texture2D_Release(back_buffer);
 
 	/* GUI */
 	ctx = nk_d3d11_init(pDevice, 640, 480, MAX_VERTEX_BUFFER, MAX_INDEX_BUFFER);
