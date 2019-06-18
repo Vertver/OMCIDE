@@ -11,3 +11,6 @@
 #include <windows.h>
 #include <d3d11.h>
 #endif
+
+#define SLEEP(x) Sleep(x)
+#define MAX_RENDERS 3

@@ -7,26 +7,51 @@
 *********************************************************/
 #include "../Platform.h"
 
+boolean 
+InitMainRender()
+{
+	int Counter = 0;
+
+InitRenders:
+	if (Counter < MAX_RENDERS)
+	{
+		if (!OMCRenderInit(Counter))
+		{
+			OMCRenderDestroy();
+			OMCWindowDestroy(OMCGetMainWindowHandle());
+
+			Counter++;
+			goto InitRenders;
+		}
+		
+		OMCSetInited();
+		return true;
+	}
+
+	return false;
+}
+
 int
 OMCMain(
 	char** argv,
 	int argc
 )
 {
-	OMCRenderInit(0);
-	OMCSetInited();
-
-	while (true)
+	if (InitMainRender())
 	{
-		Sleep(1);
-
-		if (!OMCIsEnabled())
+		while (true)
 		{
-			break;
+			SLEEP(1);
+
+			if (!OMCIsEnabled())
+			{
+				break;
+			}
 		}
+
+		OMCRenderDestroy();
 	}
 
-	OMCRenderDestroy();
 
 	return 0;
 }

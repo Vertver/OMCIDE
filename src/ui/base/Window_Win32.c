@@ -11,12 +11,19 @@ boolean Window_Flag_Resizeing = false;
 boolean FirstResize = true;
 HANDLE hCloseEvent = NULL;
 HANDLE hWaitForInit = NULL;
+HANDLE ThreadHandle = NULL;
 HWND MainHWND = NULL;
 
 int
 OMCIsEnabled()
 {
 	return !!MainHWND;
+}
+
+void*
+OMCGetMainWindowHandle()
+{
+	return MainHWND;
 }
 
 LRESULT 
@@ -52,7 +59,11 @@ CustomWindowProc(
 	case WM_PAINT:
 		if (Window_Flag_Resizeing)
 		{
-			OMCRenderDraw();
+			if (!OMCRenderDraw())
+			{
+				PostQuitMessage(0);
+				return 0;
+			}
 		}
 		break;
 	case WM_SIZE:
@@ -62,7 +73,11 @@ CustomWindowProc(
 		*/
 		if (wParam != SIZE_MINIMIZED)
 		{
-			OMCRenderResize(LOWORD(lParam), HIWORD(lParam));
+			if (!OMCRenderResize(LOWORD(lParam), HIWORD(lParam)))
+			{
+				PostQuitMessage(0);
+				return 0;
+			}
 		}
 		else
 		{
@@ -80,7 +95,7 @@ CustomWindowProc(
 	}
 
 	/*
-		if nothing there, put this to nuklear 
+		if we complete work with messages - give it to nuklear
 	*/
 	if (NuklearHandleEvent(hWnd, uMsg, wParam, lParam)) return 0;
 
@@ -100,8 +115,8 @@ WindowCreateFunc(
 	DWORD exstyle = WS_EX_APPWINDOW;
 	HWND wnd;
 	int running = 1;
-	HRESULT hr;
-	D3D_FEATURE_LEVEL feature_level;
+	HRESULT hr = 0;
+	D3D_FEATURE_LEVEL feature_level = 0;
 	DXGI_SWAP_CHAIN_DESC swap_chain_desc;
 
 	/*
@@ -135,14 +150,11 @@ WindowCreateFunc(
 	while (WaitForSingleObject(hCloseEvent, 0) != WAIT_OBJECT_0)
 	{
 		MSG message;
-		RECT rc;
 
 		/*
 			We can't do anything if we don't initialized
 		*/
 		WaitForSingleObject(hWaitForInit, INFINITE);
-
-		GetWindowRect(MainHWND, &rc);
 	
 		NuklearInputBegin();
 
@@ -165,6 +177,7 @@ WindowCreateFunc(
 
 	OMCWindowDestroy(MainHWND);
 	MainHWND = NULL;
+	ThreadHandle = NULL;
 }
 
 /*
@@ -186,7 +199,6 @@ void*
 OMCMainWindowCreate()
 {
 	void* ptr = NULL;
-	void* ThreadHandle = NULL;
 
 	/*
 		Create close event
@@ -224,6 +236,8 @@ OMCWindowDestroy(
 	if (WindowHandle != NULL && WindowHandle != INVALID_HANDLE_VALUE)
 	{
 		DestroyWindow(WindowHandle);
+		UnregisterClassW(L"OMCIDE_WINDOW", GetModuleHandle(0));
+
 		if (hCloseEvent && hCloseEvent != INVALID_HANDLE_VALUE) CloseHandle(hCloseEvent);
 		if (hWaitForInit && hWaitForInit != INVALID_HANDLE_VALUE) CloseHandle(hWaitForInit);
 	}
@@ -235,7 +249,7 @@ OMCMainWindowSetName(
 )
 {
 	// get size of new UTF-8 string
-	int StringSize = WideCharToMultiByte(CP_UTF8, 0, NameUTF8, -1, NULL, 0, NULL, NULL);
+	int StringSize = MultiByteToWideChar(CP_UTF8, 0, NameUTF8, -1, NULL, 0);
 	LPCWSTR lpOutString = NULL;
 
 	if (StringSize)
@@ -243,9 +257,9 @@ OMCMainWindowSetName(
 		/*
 			Allocate string and convert to UTF-8
 		*/
-		lpOutString = OMCMemAlloc(++StringSize);
+		lpOutString = OMCMemAlloc((++StringSize) * 2);
 
-		if (WideCharToMultiByte(CP_UTF8, 0, NameUTF8, -1, lpOutString, StringSize, NULL, NULL))
+		if (MultiByteToWideChar(CP_UTF8, 0, NameUTF8, -1, lpOutString, StringSize))
 		{
 			SetWindowTextW(MainHWND, lpOutString);
 		}

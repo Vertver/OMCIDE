@@ -179,7 +179,7 @@
     <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_vertex.c" />
     <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_widget.c" />
     <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_window.c" />
-    <ClCompile Include="..\..\src\render\GUI_Render.c" />
+    <ClCompile Include="..\..\src\render\GUI_Render_Win32.c" />
     <ClCompile Include="..\..\src\ui\base\Window_Win32.c" />
   </ItemGroup>
   <ItemGroup>

@@ -144,11 +144,11 @@
     <ClCompile Include="..\..\3rd-party\nuklear\src\nuklear_progress.c">
       <Filter>src\nuklear</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\render\GUI_Render.c">
-      <Filter>src\Render</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\ui\base\Window_Win32.c">
       <Filter>src\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\render\GUI_Render_Win32.c">
+      <Filter>src\Render</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

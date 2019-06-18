@@ -41,6 +41,8 @@ typedef u8					boolean;
 #define false 0
 #endif
 
+#define nullptr NULL
+
 #ifdef PLATFORM_WINDOWS
 #define MAX_PATH        260
 typedef wchar_t         utf16;

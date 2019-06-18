@@ -7,7 +7,7 @@
 *********************************************************/
 #pragma once
 
-#include "Types.h"
+#pragma warning( disable : 4267)
 
 #if defined(WINDOWS_PLATFORM)
 #include "Platform_Win32.h"
@@ -18,6 +18,8 @@
 #elif defined(FREEBSD_PLATFORM)
 
 #endif
+
+#include "Types.h"
 
 #include "base/Allocator.h"
 #include "base/DyLib.h"

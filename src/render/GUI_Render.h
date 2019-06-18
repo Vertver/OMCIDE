@@ -30,10 +30,10 @@ OMCRenderRestart(
 void
 OMCRenderDestroy();
 
-void
+boolean
 OMCRenderDraw();
 
-void
+boolean
 OMCRenderResize(
 	int Width,
 	int Height
@@ -62,28 +62,28 @@ OMCRenderDestroyOGL();
 void
 OMCRenderDestroyGDI();
 
-void
+boolean
 OMCRenderDrawD3D11();
 
-void
+boolean
 OMCRenderDrawOGL();
 
-void
+boolean
 OMCRenderDrawGDI();
 
-void
+boolean
 OMCRenderResizeD3D11(
 	int Width,
 	int Height
 );
 
-void
+boolean
 OMCRenderResizeOGL(
 	int Width, 
 	int Height
 );
 
-void
+boolean
 OMCRenderResizeGDI(
 	int Width,
 	int Height

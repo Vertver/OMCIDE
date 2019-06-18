@@ -16,6 +16,9 @@ OMCWindowDestroy(
 	void* WindowHandle
 );
 
+void*
+OMCGetMainWindowHandle();
+
 void
 OMCMainWindowDestroy();
 
